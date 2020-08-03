@@ -1,0 +1,268 @@
+/* *Global styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 2.6rem;
+}
+
+li,
+button,
+label,
+input,
+p {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 4.8rem;
+}
+
+h3 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+h4,
+h5 {
+    font-size: 2.8;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+button {
+    padding: 2rem 6rem;
+    background: #4c6e97;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+    /* transition: property u want to transition eg background or all next time of transition and animation style al last delay if u want*/
+    /*! transition: all 1s ease-in 0.5sec */
+}
+button:hover{
+    background: #27394e
+}
+
+/* * Nav bar */
+
+
+.main-head {
+    background: #131c27;
+    color: #fff;
+}
+
+nav {
+    min-height: 10vh;
+    /* ! now min height ki jagah hum padding bhi use kr skte hai to do it but i like this way to be specific like 10vh nav bar and 90 vh header but jab hum isko chota krnge to page height chota hone se vh bhi km hoga and 10vh or chota hence we use both padding and vh taki page chota hone pe bhi vh chota ho but padding rhe to vo nav bar shi rhe.......
+    * just remeber one thing dont use height bcz usko use krke agr responsive banaoge to content overlaping hoti hai content div se bhr nikal jayega and all to dont use height*/
+    display: flex;
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    flex: 1 1 40rem;
+    /* ! yad rkhna agr tumhe logo or nav bar kr beech space km krna ho to bs flex grow adjust krna ha uske hisab se sab ho jayega abhi muje logo double size ka chaiye as compared to nav bar to maine uska grow 2 kra hua h  */
+    justify-content: space-around;
+    list-style: none;
+}
+
+#logo {
+    flex: 2 1 40rem;
+    font-weight: 400;
+    font-family: 'Pattaya', sans-serif;
+}
+
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url(./img/landing-page.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.hero h3 {
+    padding: 5rem;
+}
+
+
+/* * LOCATIONS SECTION */
+
+#locations {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url(./img/new-york-page.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    /* * display flex dalne ka sirf ek hi reason hai taki hum align-items use kr ske bcz ye sirf header ko hi lg rha hai...to bs align-items ke liye ye kiya hai */
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.locations-head {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.locations-head h2{
+    padding: 1rem 0rem;
+    text-decoration: underline;
+    -webkit-text-decoration-thickness: 0.5rem;
+    font-size: 4rem;
+}
+
+.locations-head h3{
+    font-size: 3rem;
+    padding: 4rem 0rem;
+    /* now ab hum text ko ek gradient colour denge first add background to it gradient vala then background clip text kr do taki text pe bhi vo background aa jaye but vo dikhega nhi bcz of the text colour and now use text fill colour hta do.........*/ /* ! remember webkit yha linear gradient pe bhi lgana padega nhi to ye work nhi krta bcz abhi ye chrome me aaya nhi hai acche se feature */
+    background: -webkit-linear-gradient(#131c27, #663b34);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cloud{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 80rem;
+    height: auto;
+    
+}
+
+.moving-cloud-1{
+    animation: cloudAnimation 3s infinite alternate ease-in-out;
+
+}
+
+.moving-cloud-2{
+    top: 15%;
+    z-index: -1;    /* to move backward */
+    opacity: 0.5;
+    animation: cloudAnimation 3.1s infinite alternate ease-in-out;
+}
+
+@keyframes cloudAnimation{
+    0% {
+        transform: translate(10%, -10%);
+    }
+    100% {
+        transform: translate(0%, 0%);
+    }
+}
+
+
+/* * MEDIA QUERY */
+
+
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 60%;
+    }
+    .locations-head h2{
+        font-size: 3.5rem;
+    }
+    
+    .locations-head h3{
+        font-size: 2.4rem;
+    }
+    .moving-cloud-2{
+        top: 10%;
+    }
+}
+
+/* ? 932px kha se aaya? -----maine observe kra hai kha pe mera wrap work kr rha hai like kha pe wrapping ho rhi hai maine us ko hi target ke liya bcz vhu se hi sab set ho jayega so it is not imp ki hum defined sizes pe hi kam kre its totally free to do  */
+
+@media screen and (max-width:932px) {
+    html {
+        font-size: 45%;
+        /* ! yha sirf font size krne se hi kam ho gya because flex basis hai vo chota ho gya or center krke ajeeb lg rha tha to maine use or neeche width pe le gya  */
+    }
+
+    /* nav{
+        text-align: center;
+         ! this is bcz ab jo 2 div h vo full width le rhe hai to center me kr diya hai text 
+    } */
+    #logo {
+        padding: 2rem;
+    }
+    .locations-head h2{
+        font-size: 4.5rem;
+        padding: 0rem 0rem;
+    }
+    
+    .locations-head h3{
+        font-size: 3rem;
+        -webkit-text-fill-color: black;
+        width: 60rem;
+        padding: 1rem 0rem;
+    }
+
+
+}
+
+@media screen and (max-width:672px) {
+
+    /* html{
+        font-size: 45%;
+        ! not necessary upper kr diya hai
+    }
+    */
+
+    nav {
+        text-align: center;
+    }
+
+    /* #logo{
+        padding: 2rem;
+        ! not necessary upper kr diya hai
+    }  */
+    
+    .locations-head h2{
+        font-size: 3.5rem;
+        padding: 0rem 0rem;
+    }
+    
+    .locations-head h3{
+        font-size: 2.8rem;
+       -webkit-text-fill-color: black;
+        width: 50rem;
+        padding: 1rem 0rem;
+
+    }
+}
+
+@media screen and (max-width:411px) {
+    .cloud{
+        width: 60rem;
+        height: auto;
+        
+    }
+
+}
