@@ -7,6 +7,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -36,7 +37,7 @@ h3 {
 
 h4,
 h5 {
-    font-size: 2.8;
+    font-size: 2.8rem;
 }
 
 a {
@@ -55,7 +56,8 @@ button {
     /* transition: property u want to transition eg background or all next time of transition and animation style al last delay if u want*/
     /*! transition: all 1s ease-in 0.5sec */
 }
-button:hover{
+
+button:hover {
     background: #27394e
 }
 
@@ -65,6 +67,9 @@ button:hover{
 .main-head {
     background: #131c27;
     color: #fff;
+    position: sticky;
+    top: 0px;
+    z-index: 3;
 }
 
 nav {
@@ -131,68 +136,247 @@ nav ul {
     margin: 0 auto;
 }
 
-.locations-head h2{
+.locations-head h2 {
     padding: 1rem 0rem;
     text-decoration: underline;
     -webkit-text-decoration-thickness: 0.5rem;
     font-size: 4rem;
 }
 
-.locations-head h3{
+.locations-head h3 {
     font-size: 3rem;
-    padding: 4rem 0rem;
-    /* now ab hum text ko ek gradient colour denge first add background to it gradient vala then background clip text kr do taki text pe bhi vo background aa jaye but vo dikhega nhi bcz of the text colour and now use text fill colour hta do.........*/ /* ! remember webkit yha linear gradient pe bhi lgana padega nhi to ye work nhi krta bcz abhi ye chrome me aaya nhi hai acche se feature */
+    padding: 2rem 0rem;
+    /* now ab hum text ko ek gradient colour denge first add background to it gradient vala then background clip text kr do taki text pe bhi vo background aa jaye but vo dikhega nhi bcz of the text colour and now use text fill colour hta do.........*/
+    /* ! remember webkit yha linear gradient pe bhi lgana padega nhi to ye work nhi krta bcz abhi ye chrome me aaya nhi hai acche se feature */
     background: -webkit-linear-gradient(#131c27, #663b34);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
 }
 
-.cloud{
+.cloud {
     position: absolute;
     top: 0%;
     right: 0%;
     width: 80rem;
     height: auto;
-    
+    pointer-events: none;
+    /* * ye simple use hota hai like normally agr hum cloud ko drag krenge main site me to image drag hogi but ek bar ye dalne se aisa nhi hota ab image drag nhi hogi......mtlb select nhi hogi */
+
 }
 
-.moving-cloud-1{
+.moving-cloud-1 {
     animation: cloudAnimation 3s infinite alternate ease-in-out;
 
 }
 
-.moving-cloud-2{
+.moving-cloud-2 {
     top: 15%;
-    z-index: -1;    /* to move backward */
+    z-index: -1;
+    /* to move backward */
     opacity: 0.5;
     animation: cloudAnimation 3.1s infinite alternate ease-in-out;
 }
 
-@keyframes cloudAnimation{
+@keyframes cloudAnimation {
     0% {
         transform: translate(10%, -10%);
     }
+
     100% {
         transform: translate(0%, 0%);
     }
 }
 
+/* *========= Benifits section============= */
 
-/* * MEDIA QUERY */
+.benefits-head {
+    background: #343c44;
+    min-height: 30vh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.benefits-head h2 {
+    font-size: 4rem;
+    text-decoration: underline;
+}
+
+/* .benefits-head h2::after{
+    height: 0.2rem;
+    width: 30rem;
+    background-color: #fff;
+    display: block;
+    content: " ";
+    margin: 0.5rem auto; 
+
+
+}*/
+
+.benefits-head h3 {
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+.cards {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 70vh;
+}
+
+.card {
+
+    flex: 1 1 25rem;
+    text-align: center;
+    /* *this is because we want to center every thing */
+    min-height: 40vh;
+    margin: 2rem 5rem;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1),
+        0px 20px 20px rgba(0, 0, 0, 0.1);
+    /*! box-shadow: x , y,  blur, color */
+    /* * we can add another bex shadow on top of it just by adding comma and adding a new layer */
+
+
+}
+
+.card-icon {
+    background: #27394e;
+
+}
+
+.card-icon img {
+    max-width: 15%;
+    margin: 2rem;
+}
+
+.card h4,
+.card p {
+    padding: 1rem;
+}
+
+/* ======CONTACT======= */
+
+#contact {
+    min-height: 100vh;
+    background: url(./img/contact-mountain.png), linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-wrapper {
+    background: rgba(19, 28, 39, 0.8);
+    width: 60%;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.from-head {
+    text-align: center;
+}
+
+.name-form,
+.form-email {
+    padding: 3rem;
+    text-align: center;
+}
+
+.form-wrapper label {
+    margin: 0rem 3rem;
+}
+
+.form-wrapper input {
+    padding: 1rem 3rem;
+}
+
+.form-wrapper button {
+    width: 100%;
+    padding: 2rem;
+    margin-top: 8rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+footer {
+    color: #fff;
+    background: rgba(19, 28, 39, 1)
+}
+
+.footer-wrapper {
+    display: flex;
+    padding: 2rem;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    min-height: 10vh;
+    flex-wrap: wrap;
+}
+
+.footer-wrapper h5 {
+    flex: 1 1 40rem;
+}
+
+.footer-wrapper ul {
+    display: flex;
+    list-style: none;
+    flex: 1 1 40rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *======= MEDIA QUERY ===========*/
 
 
 @media screen and (max-width: 1024px) {
     html {
         font-size: 60%;
     }
-    .locations-head h2{
+
+    .locations-head h2 {
         font-size: 3.5rem;
     }
-    
-    .locations-head h3{
-        font-size: 2.4rem;
+
+    .locations-head h3 {
+        font-size: 2.8rem;
+        width: 68rem;
     }
-    .moving-cloud-2{
+
+    .moving-cloud-2 {
         top: 10%;
     }
 }
@@ -212,18 +396,31 @@ nav ul {
     #logo {
         padding: 2rem;
     }
-    .locations-head h2{
+
+    .locations-head h2 {
         font-size: 4.5rem;
         padding: 0rem 0rem;
     }
-    
-    .locations-head h3{
-        font-size: 3rem;
+
+    .locations-head h3 {
+        font-size: 3.5rem;
         -webkit-text-fill-color: black;
         width: 60rem;
         padding: 1rem 0rem;
     }
 
+    footer {
+        text-align: center;
+    }
+
+    .footer-wrapper h5 {
+        padding-bottom: 3rem;
+        text-align: left;
+    }
+
+    .form-wrapper {
+        width: 90%;
+    }
 
 }
 
@@ -243,26 +440,38 @@ nav ul {
         padding: 2rem;
         ! not necessary upper kr diya hai
     }  */
-    
-    .locations-head h2{
+
+    .locations-head h2 {
         font-size: 3.5rem;
         padding: 0rem 0rem;
     }
-    
-    .locations-head h3{
-        font-size: 2.8rem;
-       -webkit-text-fill-color: black;
-        width: 50rem;
+
+    .locations-head h3 {
+        font-size: 3rem;
+        -webkit-text-fill-color: black;
+        max-width: 50rem;
         padding: 1rem 0rem;
 
+    }
+
+    .footer-wrapper h5 {
+        text-align: center;
     }
 }
 
 @media screen and (max-width:411px) {
-    .cloud{
+    html {
+        font-size: 42%;
+    }
+
+    .cloud {
         width: 60rem;
         height: auto;
-        
+
+    }
+
+    .footer-wrapper h5 {
+        text-align: center;
     }
 
 }

@@ -23,9 +23,9 @@
       <nav>
         <h1 id="logo">Travelly</h1>
         <ul>
-          <li><a href="#location">Location</a></li>
+          <li><a href="#locations">Location</a></li>
           <li><a href="#benefits">Benefits</a></li>
-          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#contact">Contacts</a></li>
         </ul>
       </nav>
     </header>
@@ -36,7 +36,7 @@
         Start your travel at an affordable price with Travelly. <br />
         Contact us now.
       </h3>
-      <button>Book Now</button>
+      <button><a href="#contact">Book Now</a></button>
     </section>
 
     <section id="locations">
@@ -46,9 +46,85 @@
           We cover everything from picking the perfect hotel,<br />
           flight and travelling destination.
         </h3>
-        <img src="./img/cloud.png" class="moving-cloud-1 cloud" >
-        <img src="./img/cloud.png" class="moving-cloud-2 cloud" >
-    </header>
+        <img src="./img/cloud.png" class="moving-cloud-1 cloud" />
+        <img src="./img/cloud.png" class="moving-cloud-2 cloud" />
+      </header>
     </section>
+    <section id="benefits">
+      <header class="benefits-head">
+        <h2>We Always Deliver More Than Expected</h2>
+        <h3>
+          We take care of everything from picking the best hotel, <br />
+          to flight and destination
+        </h3>
+      </header>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">
+            <img src="./icons/route-solid.svg" alt="" />
+          </div>
+          <h4>Travel</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quae
+            numquam facilis maiores fugiat deserunt?
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <img src="./icons/bed-solid.svg" alt="" />
+          </div>
+          <h4>Hotel</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quae
+            numquam facilis maiores fugiat deserunt?
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <img src="./icons/plane-departure-solid.svg" alt="" />
+          </div>
+          <h4>Flight</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quae
+            numquam facilis maiores fugiat deserunt?
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="form-wrapper">
+        <header class="from-head">
+          <h2>Contact Us</h2>
+        </header>
+        <form action="https://formspree.io/xqkyngon" method="POST">
+          >
+          <div class="name-form">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div class="form-email">
+            <label>Email:</label>
+            <input type="email" name="_replyto" required />
+          </div>
+          <button type="submit" value="Send">Submit</button>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-wrapper">
+        <h5>Travelly &copy;</h5>
+        <ul>
+          <li>
+            <a href="#"><img src="./icons/twitter.svg" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./icons/instagram.svg" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./icons/youtube.svg" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
